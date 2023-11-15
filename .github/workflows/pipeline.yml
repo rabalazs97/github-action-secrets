@@ -1,0 +1,18 @@
+name: Github Action Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Invoking other action
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: script
+        name: Run script
+        run: |
+          Write-Host $env:SUPERSECRET
+        env:
+          SUPERSECRET: ${{ secrets.asdsecret }}
