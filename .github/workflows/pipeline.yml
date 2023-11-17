@@ -17,7 +17,7 @@ jobs:
             Write-Output output="asdasd" >> $env:GITHUB_OUTPUT
           }
       - id: second
-        if: ${{ steps.script.outputs.output == "asdasd" }}
+        if: ${{ steps.script.outputs.output == 'asdasd' }}
         run: |
           Write-Host "got the output from the first one"
           Write-Output output="secondoutput" >> $env:GITHUB_OUTPUT
