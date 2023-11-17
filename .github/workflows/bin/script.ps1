@@ -1,1 +1,1 @@
-Write-Host $env:SUPERSECRET
+Write-Host "Got the output from the second step: $env:SECOND_OUTPUT"
