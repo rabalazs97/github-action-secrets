@@ -13,8 +13,7 @@ jobs:
       - id: script
         name: Run script
         run: |
-          # Write-Output output="asdasd" >> $env:GITHUB_OUTPUT
-          Write-Host 'asd'
+          # Write-Output output="asdas" >> $env:GITHUB_OUTPUT
       - id: second
         if: ${{ steps.script.outputs.output == 'asdasd' }}
         name: Second Script
@@ -26,5 +25,6 @@ jobs:
         run: .github\workflows\bin\script.ps1
         if: ${{ (steps.script.outputs.output != null || steps.second.outputs.output != null) }}
         env:
+          FIRST_OUTPUT: ${{ steps.script.outputs.output }}
           SECOND_OUTPUT: ${{ steps.second.outputs.output }}
         
