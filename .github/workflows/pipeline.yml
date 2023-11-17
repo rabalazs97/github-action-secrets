@@ -13,7 +13,7 @@ jobs:
       - id: script
         name: Run script
         run: |
-          # Write-Output output="asdas" >> $env:GITHUB_OUTPUT
+          Write-Output output="asdas" >> $env:GITHUB_OUTPUT
       - id: second
         if: ${{ steps.script.outputs.output == 'asdasd' }}
         name: Second Script
